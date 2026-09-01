@@ -3,12 +3,12 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Yann-ndani": {
+    "Monga-bus": {
       "projectType": "application",
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "monga",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -56,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Yann-ndani:build:production"
+              "buildTarget": "Monga-bus:build:production"
             },
             "development": {
-              "buildTarget": "Yann-ndani:build:development"
+              "buildTarget": "Monga-bus:build:development"
             }
           },
           "defaultConfiguration": "development"
