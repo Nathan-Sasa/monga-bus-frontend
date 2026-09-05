@@ -1,0 +1,74 @@
+<div
+    class="flex items-center gap-md"
+    >
+    <svg
+        [attr.width]="size()"
+        [attr.height]="size()"
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+        [attr.role]="label() ? 'img' : null"
+        [attr.aria-label]="label()"
+        [attr.aria-hidden]="label() ? null : true"
+        focusable="false"
+        class="p-0"
+    >
+    <!-- Avion -->
+    <path
+            class="plane"
+            d="
+            M 13 58
+            L 22 53
+            L 28 54
+            L 58 45
+            L 77 39
+            Q 84 37 88 41
+            Q 91 44 87 48
+            Q 85 50 80 51
+            L 54 57
+            L 34 62
+            L 26 65
+            L 22 61
+            L 13 58
+            Z
+            "
+        />
+
+        <!-- Aile supérieure -->
+        <path
+            class="plane-detail"
+            d="
+            M 40 51
+            L 35 42
+            Q 34 39 37 40
+            L 45 48
+            Z
+            "
+        />
+
+        <!-- Empennage -->
+        <path
+            class="plane-detail"
+            d="
+            M 23 54
+            L 17 48
+            Q 15 46 16 51
+            L 18 58
+            Z
+            "
+        />
+
+        <!-- Ligne / trajectoire -->
+        <path
+            class="trajectory"
+            d="
+            M 24 72
+            L 72 72
+            "
+        />
+    </svg>
+    @if (isText()) {
+        <span>
+            <p class="text-h3 text-brand-text-muted">Monga Bus</p>
+        </span>
+    }
+</div>

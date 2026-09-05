@@ -1,0 +1,82 @@
+<header
+    #header
+    id="header"
+    class="navbar || mb-4 fixed w-full top-0 z-200 bg-transparent shadow-none border border-transparent transition-ease duration-200 || flex flex-col"
+    [class.-translate-y-2/1]="!navBarVisible"
+    >
+    <div
+        appEntryAnim
+        [delay]="200"
+        [threshold]="0.2"
+        [translateY]="-25"
+        [speed]="300" 
+        class="container mx-auto flex items-center justify-between gap-sm px-main py-sm opacity-0"
+        >
+        <div>
+            @if (!isMenuOpen) {
+                <a routerLink="/">
+                    <mg-logo 
+                        [size]="48"
+                        [isText]="true"
+                    />
+                </a>
+            }
+        </div>
+        <nav
+            class="hidden lg:block"
+            >
+            <ul
+                class="flex items-center gap-sm"
+                >
+                @for(url of routesUrl; track $index){
+                    <li
+                        
+                        >
+                        <p-button
+                            [icon]="url.icon"
+                            severity="secondary"
+                            routerLink="{{url.path}}"
+                            [routerLinkActive]="['*:text-brand-accent!']"
+                            [label]="url.label"
+                            (onClick)="isNavOpen.update(v => !v)"
+                            size="small" 
+                            [text]="btnText()"
+                        />
+                    </li> 
+                }
+            </ul>
+        </nav>
+
+        <div
+            class="hidden lg:flex items-center gap-sm"
+            >
+            <mg-theme />
+            <p-button
+                icon="pi pi-sign-in"
+                severity="primary"
+                routerLink="/auth"
+                label="Connexion"
+                size="small" 
+            />
+        </div>
+
+        <p-button 
+            icon="pi pi-bars"
+            severity="secondary"
+            size="small"
+            (click)="isMenuOpen = true"
+            class="block lg:hidden"
+        />
+    </div>
+    @if(isNavOpen()){
+        <div
+            class="container mx-auto min-h-44"
+            >
+    
+        </div>
+    }
+</header>
+
+<p-drawer header="Monga Bus Travel" [(visible)]="isMenuOpen" position="right">
+
+</p-drawer>

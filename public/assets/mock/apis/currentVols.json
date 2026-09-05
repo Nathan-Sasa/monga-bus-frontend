@@ -1,0 +1,95 @@
+[
+    {
+        "id": 213,
+        "company": "Air France L",
+        "logo_company": "",
+        "vol_type": "A",
+        "depart": {
+            "type": "FIH",
+            "town": "Kinshasa",
+            "time": "2026-09-10T03:00",
+            "airport": ""
+        },
+        "destinations": {
+            "type": "CDG",
+            "town": "Paris",
+            "time": "2026-09-11T08:00",
+            "airport": ""
+        },
+        "vol_time": "5 heures",
+        "scale": {
+            "isScale": false,
+            "towns": []
+        },
+        "prices": {
+            "class": {
+                "first_class": 2500,
+                "business_class": 1200,
+                "economic_class": 680
+            },
+            "currency": "USD"
+        }
+    },
+    {
+        "id": 325,
+        "company": "Ethiopian Airlines",
+        "logo_company": "",
+        "vol_type": "A/R",
+        "depart": {
+            "type": "FIH",
+            "town": "Londres",
+            "time": "2026-09-21T18:00",
+            "airport": ""
+        },
+        "destinations": {
+            "type": "CDG",
+            "town": "Paris",
+            "time": "2026-10-22T08:00",
+            "airport": ""
+        },
+        "vol_time": "1j : 10h : 40min",
+        "scale": {
+            "isScale": true,
+            "towns": ["Rabba"]
+        },
+        "prices": {
+            "class": {
+                "first_class": 3600,
+                "business_class": 2250,
+                "economic_class": 1380
+            },
+            "currency": "USD"
+        }
+    },
+    {
+        "id": 538,
+        "company": "KLM Royal Dutch",
+        "logo_company": "",
+        "vol_type": "A",
+        "depart": {
+            "type": "FIH",
+            "town": "Kinshasa",
+            "time": "2026-10-05T10:40",
+            "airport": ""
+        },
+        "destinations": {
+            "type": "CDG",
+            "town": "Canada",
+            "time": "2026-10-07T08:30",
+            "airport": ""
+        },
+        "vol_time": "1j : 21h : 50min",
+        "scale": {
+            "isScale": true,
+            "towns": ["Addis Abeba", "Londres"]
+        },
+        "prices": {
+            "class": {
+                "first_class": 5300,
+                "business_class": 2950,
+                "economic_class": 1780
+            },
+            "currency": "USD"
+        }
+    }
+]

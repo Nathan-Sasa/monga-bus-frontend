@@ -1,0 +1,122 @@
+<section
+    class="w-full min-h-40 flex flex-col lg:flex-row items-center py-section-y px-main gap-main relative"
+    >
+    <div
+        class="w-full lg:w-1/3 xl:w-1/2 flex flex-col gap-md"
+        >
+        <p
+            appEntryAnim
+            [delay]="200"
+            [translateY]="-25"
+            class="text-h3 opacity-0"
+            >
+            Achetez vos billets de vols, partout, en quelques cliques et étapes simples, et en toute sécurité.
+        </p>
+        <p-button
+            icon="pi pi-search"
+            [iconPos]="'right'"
+            severity="primary"
+            routerLink="{{''}}"
+            label="chercher une destination"
+            size="small"
+        />
+    </div>
+    <div
+        
+        class="w-full lg:w-2/3 xl:w-1/2 grid grid-cols-1 lg:grid-cols-3 gap-md"
+        >
+        <p-card
+            >
+            <div
+                #statSection
+                class="flex lg:flex-col justify-between"
+                >
+                <div class="w-3/4 lg:w-full">
+                    <div
+                        class="flex justify-start"
+                        >
+                        <p class="font-bold mask-b-from-20% text-brand-primary/60">01</p>
+                    </div>
+                    <div
+                        class="flex items-center gap-sm mt-md"
+                        >
+                        <span
+                            class="bg-brand-accent h-10 w-10 rounded-sm flex flex-col items-center justify-center"
+                            >
+                            <i class="pi pi-receipt text-brand-surface-alt dark:text-brand-primary"></i>
+                        </span>
+                        <p class="font-semibold">Billet</p>
+                    </div>
+                    <div>
+                        <p class="text-small text-brand-text-muted mt-sm">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center mt-sm">
+                    <p class="text-h2 font-semibold">+ {{billet}}</p>
+                </div>
+            </div>
+        </p-card>
+        <p-card
+            >
+            <div
+                #statSection
+                class="flex lg:flex-col justify-between"
+                >
+                <div class="w-3/4 lg:w-full">
+                    <div
+                        class="flex justify-start"
+                        >
+                        <p class="font-bold mask-b-from-20% text-brand-primary/60">02</p>
+                    </div>
+                    <div
+                        class="flex items-center gap-sm mt-md"
+                        >
+                        <span
+                            class="bg-brand-accent h-10 w-10 rounded-sm flex flex-col items-center justify-center"
+                            >
+                            <i class="pi pi-map-marker text-brand-surface-alt dark:text-brand-primary"></i>
+                        </span>
+                        <p class="font-semibold">Destination</p>
+                    </div>
+                    <div>
+                        <p class="text-small text-brand-text-muted mt-sm">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center mt-sm">
+                    <p class="text-h2 font-semibold">+ {{destination}}</p>
+                </div>
+            </div>
+        </p-card>
+        <p-card
+            >
+            <div
+                #statSection
+                class="flex lg:flex-col justify-between"
+                >
+                <div class="w-3/4 lg:w-full">
+                    <div
+                        class="flex justify-start"
+                        >
+                        <p class="font-bold mask-b-from-20% text-brand-primary/60">03</p>
+                    </div>
+                    <div
+                        class="flex items-center gap-sm mt-md"
+                        >
+                        <span
+                            class="bg-brand-accent h-10 w-10 rounded-sm flex flex-col items-center justify-center"
+                            >
+                            <i class="pi pi-receipt text-brand-surface-alt dark:text-brand-primary"></i>
+                        </span>
+                        <p class="font-semibold">Company</p>
+                    </div>
+                    <div>
+                        <p class="text-small text-brand-text-muted mt-sm">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center mt-sm">
+                    <p class="text-h2 font-semibold">{{companyPartner}}</p>
+                </div>
+            </div>
+        </p-card>
+    </div>
+</section>

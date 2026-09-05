@@ -1,0 +1,99 @@
+<div
+    class="w-full h-screen relative"
+    >
+    <div
+        class="w-full h-full"
+        >
+        @for (item of heroMapper; track $index; let i = $index) {
+            <div
+                [class.opacity-100]="i === currentIndex"
+                [class.opacity-0]="i !== currentIndex"
+                class="w-full h-full absolute transition-morph-low duration-300"
+                >
+                <img 
+                    [src]="item.image1"
+                    alt="" 
+                    class="w-full h-full object-cover"
+                >
+                <div
+                    class="w-full h-full absolute top-0 bg-brand-bg/25 dark:bg-brand-bg/60"
+                    >
+                    <span
+                        class="absolute top-section-y right-section-y text-label font-bold tracking-wider opacity-15 text-brand-primary-dark dark:text-brand-primary-light text-center flex items-center justify-center uppercase"
+                        >
+                        {{item.country}}
+                    </span>
+                </div>
+            </div>
+        }
+    </div>
+    <div
+        class="w-full h-full absolute top-0 flex flex-col justify-end gap-y-big p-main"
+        >
+        <div
+            class="w-full min-h-60 flex flex-col items-start justify-end"
+            >
+            <h2 
+                class="text-h3 font-bold text-brand-surface-alt dark:text-brand-primary">
+                MONGA BUS TRAVEL
+            </h2>
+            <h3 
+                class="text-hero font-semibold text-brand-surface-alt dark:text-brand-primary"
+                >
+                Voyagez partout dans le monde.
+            </h3>
+            <p 
+                class="text-h3 text-brand-surface-alt dark:text-brand-primary"
+                >
+                Recherchez vos vols, comparez les tarifs et reservez vos billets simplement.
+            </p>
+        </div>
+        <div
+            class="w-full min-h-30 bg-brand-bg rounded-card overflow-hidden"
+            >
+            <p-tabs 
+                value="0"
+                class="h-full!">
+                <p-tablist>
+                    <p-tab value="0">Aller simple</p-tab>
+                    <p-tab value="1">Aller et Retour</p-tab>
+                </p-tablist>
+                <p-tabpanels>
+                    <p-tabpanel value="0">
+                        @if(loading()){
+                            <div
+                                class="w-full flex items-center justify-center"
+                                >
+                                <p-progress-spinner/>
+                            </div>
+                        }@else {
+                            <mg-list 
+                                [vols]="vols().filter(v => v.vol_type === 'A')"
+                                label="List de vols recent"
+                                [isHeader]="false"
+                                textSize="text-small"
+                            />
+                        }
+                    </p-tabpanel>
+                    <p-tabpanel value="1">
+                        @if(loading()){
+                            <div
+                                class="w-full flex items-center justify-center"
+                                >
+                                <p-progress-spinner/>
+                            </div>
+                        }@else {
+                            <mg-list 
+                                [vols]="vols().filter(v => v.vol_type === 'A/R')"
+                                label="List de vols recent"
+                                [isHeader]="false"
+                                textSize="text-small"
+                            />
+                        }
+                    </p-tabpanel>
+                </p-tabpanels>
+            </p-tabs>
+        </div>
+    </div>
+    <span class="w-full h-3 mask-t-from-10% bg-brand-bg absolute bottom-0 z-20"></span>
+</div>

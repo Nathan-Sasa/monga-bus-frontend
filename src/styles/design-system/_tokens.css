@@ -1,0 +1,143 @@
+@import "./_typography.css";
+@import "tailwindcss";
+
+:root {
+    --text-hero: 2.25rem;
+    --text-h1: 2.25rem;
+    --text-h2: 1.75rem;
+    --text-h3: 1.25rem;
+    --text-base: 1rem;
+    --text-small: 0.7rem;
+    --text-label: 2.5rem;
+
+    --transition-morph: cubic-bezier(0.075, 0.82, 0.165, 1);
+    --transition-morph-low: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+@media (min-width: 640px) { /* sm */
+    :root {
+        --text-hero: 2.5rem;
+        --text-h1: 2.5rem;
+        --text-base: 1rem;
+        --text-label: 3.5rem;
+    }
+}
+@media (min-width: 1024px) { /* lg */
+    :root {
+        --text-hero: 3.5rem;
+        --text-h1: 3rem;
+        --text-h2: 2.25rem;
+        --text-h3: 1.5rem;
+        --text-base: 1rem;
+        --text-label: 4rem;
+    }
+}
+@media (min-width: 1280px) { /* xl */
+    :root { 
+        --text-hero: 4rem; 
+        --text-h3: 1.75rem;
+        --text-label: 6rem;
+    }
+}
+@media (min-width: 1536px) { /* 2xl */
+    :root { 
+        --text-hero: 4rem; 
+        --text-h3: 2rem;
+        --text-label: 8rem;
+    }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --color-brand-primary: #1e293b;
+  --color-brand-primary-light: #475569;
+  --color-brand-primary-dark: #0f172a;
+  
+  --color-brand-accent: #d97706;
+  --color-brand-accent-hover: #b45309;
+  --color-brand-accent-active: #92400e;
+  --color-brand-accent-light: #fef3c7;
+
+  /* Surfaces & États */
+  --color-brand-bg: #f8fafc;
+  --color-brand-surface: #ffffff;
+  --color-brand-surface-alt: #f1f5f9;
+  
+  --color-brand-border: #e2e8f0;
+  --color-brand-border-strong: #cbd5e1;
+  --color-brand-text-muted: #64748b;
+
+    --text-hero: var(--text-hero);
+    --text-h1: var(--text-h1);
+    --text-h2: var(--text-h2);
+    --text-h3: var(--text-h3);
+    --text-small: var(--text-small);
+    --text-base: var(--text-base);
+    --text-label: var(--text-label);
+
+   --font-sans: 'Poppins Light';
+    --font-regular: 'Poppins Regular';
+    --font-medium: 'Poppins Medium';
+    --font-Semibold: 'Poppins Bold';
+    --font-bold: 'Poppins bold';
+
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 999px;
+    --radius-card: 24px;
+
+    --spacing-main: clamp(1rem, 5vw, 2rem);
+    --spacing-section-y: clamp(3rem, 10vw, 6rem);
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-big: 48px;
+
+    --z-sticky: 200;
+    --z-overlay: 300;
+    --z-modal: 400;
+}
+
+@utility dark-theme {
+  --color-brand-primary: #ffffff;
+  --color-brand-primary-light: #cbd5e1;
+  --color-brand-primary-dark: #f8fafc;
+  
+  --color-brand-accent: #f59e0b;
+  --color-brand-accent-hover: #d97706;
+  --color-brand-accent-active: #b45309;
+  --color-brand-accent-light: #451a03;
+
+  --color-brand-bg: #0b0f17;
+  --color-brand-surface: #131b2e;
+  --color-brand-surface-alt: #1e293b;
+
+  --color-brand-border: #1e293b;
+  --color-brand-border-strong: #334155;
+  --color-brand-text-muted: #94a3b8;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root { @apply dark-theme; }
+} */
+
+/* &:where(.dark, .dark *){
+    @apply dark-theme;
+    :root { @apply dark-theme; }
+} */
+html.dark {
+  @apply dark-theme;
+}
+
+
+.transition-morph {
+    transition-timing-function: var(--transition-morph);
+}
+
+.transition-morph-low {
+    transition-timing-function: var(--transition-morph-low);
+}

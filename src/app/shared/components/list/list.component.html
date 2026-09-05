@@ -1,0 +1,114 @@
+<!-- List component -->
+<!-- @for (vol of vols(); track $index;) {
+    <span>{{vol.company}}</span>
+} -->
+<p-table
+    [ariaLabel]="label()"
+    [value]="vols()"
+    [paginator]="false"
+    [tableStyle]="{'min-width': '55rem'}"
+    [rowHover]="true"
+    >
+    @if(isHeader()) {
+        <ng-template 
+            #header
+            >
+            <tr>
+                <th >Company</th>
+            </tr>
+        </ng-template>
+    }
+    @for (vol of vols(); track vol.id;) {
+        <ng-template #body let-product>
+            <tr
+                appEntryAnim
+                [delay]="100"
+                [threshold]="0.5"
+                [translateY]="15"
+                class="opacity-0"
+                >
+                <td 
+                    style="min-width: 1rem"
+                    class="{{textSize()}}"
+                    >
+                    {{vol.logo_company}}
+                </td>
+                <td 
+                    style="min-width: 3rem"
+                    class="{{textSize()}}"
+                    >
+                    <div
+                        class="flex flex-col"
+                        >
+                        <span>
+                            {{vol.company}}
+                        </span>
+                        <!-- <span class="text-brand-text-muted">
+                            {{vol.depart.type}} - {{vol.destinations.type}}
+                        </span> -->
+                    </div>
+                </td>
+                <td 
+                    style="min-width: 6rem"
+                    class="{{textSize()}}"
+                    >
+                    <div class="flex items-center gap-md">
+                        <span class="flex flex-col gap-0">
+                            <p>
+                                {{vol.depart.town}}
+                            </p>
+                            <small class="text-brand-text-muted">{{vol.depart.type}}</small>
+                        </span>
+                        <span class="text-brand-accent font-black mx-xs">>></span>
+                        <span class="flex flex-col gap-0">
+                            <p>
+                                {{vol.destinations.town}}
+                            </p>
+                            <small class="text-brand-text-muted">{{vol.destinations.type}}</small>
+                        </span>
+                    </div>
+                </td>
+                <td 
+                    style="min-width: 3rem"
+                    class="{{textSize()}}"
+                    >
+                    <span class="flex items-center gap-xs">
+                        <p>Départ  </p> :
+                        <p class="text-brand-text-muted">
+                            {{vol.depart.time | date: 'dd MMMM yyyy, HH:mm'}}
+                        </p>
+                    </span>
+                    <span class="flex items-center gap-xs">
+                        <p>Arrivé  </p> :
+                        <p class="text-brand-text-muted">
+                            {{vol.destinations.time| date: 'dd MMMM yyyy, HH:mm'}}
+                        </p>
+                    </span>
+                </td>
+                <td 
+                    style="min-width: 3rem"
+                    class="{{textSize()}}"
+                    >
+                    <span
+                        class="flex flex-col"
+                        >
+                        <p class="font-semibold">
+                            {{vol.prices.class.economic_class | currency: vol.prices.currency}}
+                        </p>
+                        <p class="text-brand-text-muted">économique</p>
+                    </span>
+                </td>
+                <td 
+                    style="min-width: 2rem"
+                    >
+                    <p-button
+                        severity="primary"
+                        routerLink=""
+                        label="Details"
+                        size="small" 
+                    />
+                </td>
+            </tr>
+        </ng-template>
+    }
+</p-table>
