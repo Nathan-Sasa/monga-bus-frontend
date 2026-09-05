@@ -1,7 +1,3 @@
-<!-- List component -->
-<!-- @for (vol of vols(); track $index;) {
-    <span>{{vol.company}}</span>
-} -->
 <p-table
     [ariaLabel]="label()"
     [value]="vols()"
@@ -21,10 +17,9 @@
     @for (vol of vols(); track vol.id;) {
         <ng-template #body let-product>
             <tr
-                appEntryAnim
-                [delay]="100"
-                [threshold]="0.5"
-                [translateY]="15"
+                mgEntryAnim
+                [delay]="200"
+                [translateY]="-25"
                 class="opacity-0"
                 >
                 <td 

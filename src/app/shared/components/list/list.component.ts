@@ -4,7 +4,7 @@ import { EntryAnimDirective } from '../../directives/entry-anim.directive';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
 	selector: 'mg-list',

@@ -5,7 +5,7 @@
         class="w-full lg:w-1/3 xl:w-1/2 flex flex-col gap-md"
         >
         <p
-            appEntryAnim
+            mgEntryAnim
             [delay]="200"
             [translateY]="-25"
             class="text-h3 opacity-0"
@@ -13,12 +13,16 @@
             Achetez vos billets de vols, partout, en quelques cliques et étapes simples, et en toute sécurité.
         </p>
         <p-button
+            mgEntryAnim
+            [delay]="400"
+            [translateY]="-25"
             icon="pi pi-search"
             [iconPos]="'right'"
             severity="primary"
-            routerLink="{{''}}"
+            routerLink=""
             label="chercher une destination"
             size="small"
+            class="hidden lg:block opacity-0"
         />
     </div>
     <div
@@ -26,17 +30,21 @@
         class="w-full lg:w-2/3 xl:w-1/2 grid grid-cols-1 lg:grid-cols-3 gap-md"
         >
         <p-card
+            mgEntryAnim
+            [delay]="300"
+            [translateY]="-25"
+            class="opacity-0"
             >
             <div
                 #statSection
                 class="flex lg:flex-col justify-between"
                 >
                 <div class="w-3/4 lg:w-full">
-                    <div
+                    <!-- <div
                         class="flex justify-start"
                         >
-                        <p class="font-bold mask-b-from-20% text-brand-primary/60">01</p>
-                    </div>
+                        <p class="font-semibold mask-b-from-20% text-brand-primary/60">01</p>
+                    </div> -->
                     <div
                         class="flex items-center gap-sm mt-md"
                         >
@@ -57,17 +65,21 @@
             </div>
         </p-card>
         <p-card
+            mgEntryAnim
+            [delay]="300"
+            [translateY]="-25"
+            class="opacity-0"
             >
             <div
                 #statSection
                 class="flex lg:flex-col justify-between"
                 >
                 <div class="w-3/4 lg:w-full">
-                    <div
+                    <!-- <div
                         class="flex justify-start"
                         >
-                        <p class="font-bold mask-b-from-20% text-brand-primary/60">02</p>
-                    </div>
+                        <p class="font-semibold mask-b-from-20% text-brand-primary/60">02</p>
+                    </div> -->
                     <div
                         class="flex items-center gap-sm mt-md"
                         >
@@ -88,17 +100,21 @@
             </div>
         </p-card>
         <p-card
+            mgEntryAnim
+            [delay]="300"
+            [translateY]="-25"
+            class="opacity-0"
             >
             <div
                 #statSection
                 class="flex lg:flex-col justify-between"
                 >
                 <div class="w-3/4 lg:w-full">
-                    <div
+                    <!-- <div
                         class="flex justify-start"
                         >
-                        <p class="font-bold mask-b-from-20% text-brand-primary/60">03</p>
-                    </div>
+                        <p class="font-semibold mask-b-from-20% text-brand-primary/60">03</p>
+                    </div> -->
                     <div
                         class="flex items-center gap-sm mt-md"
                         >
@@ -118,5 +134,19 @@
                 </div>
             </div>
         </p-card>
+    </div>
+    <div class="block lg:hidden">
+        <p-button
+            mgEntryAnim
+            [delay]="200"
+            [translateY]="-25"
+            icon="pi pi-search"
+            [iconPos]="'right'"
+            severity="primary"
+            routerLink=""
+            label="chercher une destination"
+            size="small"
+            class="block lg:hidden opacity-0"
+        />
     </div>
 </section>

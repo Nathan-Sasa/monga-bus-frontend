@@ -2,7 +2,7 @@ import { AfterViewInit, Component, inject, OnDestroy, signal } from '@angular/co
 import { TabsModule } from 'primeng/tabs';
 import { VolMockService } from '../../../../../../core/services/vol-mock.service';
 import { toSignal } from '@angular/core/rxjs-interop'
-// import { EntryAnimDirective } from '../../../../../../shared/directives/entry-anim.directive';
+import { EntryAnimDirective } from '../../../../../../shared/directives/entry-anim.directive';
 // import { NgOptimizedImage } from '@angular/common';
 import { tap } from 'rxjs';
 import { ListComponent } from '../../../../../../shared/components/list/list.component';
@@ -13,8 +13,8 @@ import { ProgressSpinner } from 'primeng/progressspinner'
 	imports: [
 		TabsModule,
 		ListComponent,
-		ProgressSpinner
-		// EntryAnimDirective
+		ProgressSpinner,
+		EntryAnimDirective
 	],
 	templateUrl: './hero-section.component.html',
 	styleUrl: './hero-section.component.css',

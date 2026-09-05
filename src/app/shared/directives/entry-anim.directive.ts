@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, ViewChild, AfterViewInit, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, Input, AfterViewInit, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 
 // type animType =
 //     | 'fade'
@@ -15,7 +15,7 @@ import { Directive, ElementRef, HostListener, Input, ViewChild, AfterViewInit, O
 //     | 'combo'
 
 @Directive({
-  selector: '[appEntryAnim]'
+  selector: '[mgEntryAnim]'
 })
 export class EntryAnimDirective implements AfterViewInit, OnDestroy {
     @Input() delay = 200
