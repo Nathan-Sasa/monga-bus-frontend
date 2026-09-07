@@ -19,7 +19,7 @@
                     class="w-full h-full absolute top-0 bg-brand-bg/25 dark:bg-brand-bg/60"
                     >
                     <span
-                        class="absolute top-section-y right-section-y text-label font-bold tracking-wider opacity-15 text-brand-primary-dark dark:text-brand-primary-light text-center flex items-center justify-center uppercase"
+                        class="absolute top-24 lg:top-section-y right-section-y text-label font-bold tracking-wider opacity-15 text-brand-primary-dark dark:text-brand-primary-light text-center flex items-center justify-center uppercase"
                         >
                         {{item.country}}
                     </span>
@@ -28,7 +28,7 @@
         }
     </div>
     <div
-        class="w-full h-full absolute top-0 flex flex-col justify-end gap-y-big p-main"
+        class="w-full h-full absolute top-0 max-lg:pb-section-y flex flex-col justify-end gap-y-big p-main"
         >
         <div
             class="w-full min-h-60 flex flex-col items-start justify-end"
@@ -58,7 +58,7 @@
             </p>
         </div>
         <div
-            class="w-full min-h-52 bg-brand-bg rounded-card overflow-hidden"
+            class="w-full min-h-36 bg-brand-bg rounded-card overflow-hidden"
             >
             <p-tabs 
                 value="0"
@@ -81,6 +81,8 @@
                                 label="List de vols recent"
                                 [isHeader]="false"
                                 textSize="text-small"
+                                logoSizeH="24"
+                                logoSizeW="24"
                             />
                         }
                     </p-tabpanel>

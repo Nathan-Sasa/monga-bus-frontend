@@ -3,7 +3,7 @@ import { IVol } from '../../../core/models/vol-mock.model';
 import { EntryAnimDirective } from '../../directives/entry-anim.directive';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -14,6 +14,7 @@ import { RouterLink } from '@angular/router';
 		EntryAnimDirective,
 		CommonModule,
 		RouterLink,
+		NgOptimizedImage
 	],
 	templateUrl: './list.component.html',
 	styleUrl: './list.component.css',
@@ -24,5 +25,7 @@ export class ListComponent {
 	label = input.required<string>()
 	isHeader = input.required<boolean>()
 	textSize= input<string>('text-base')
+	logoSizeH= input<string>('48')
+	logoSizeW= input<string>('48')
 
 }

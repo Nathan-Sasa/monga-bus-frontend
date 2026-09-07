@@ -2,7 +2,7 @@
     {
         "id": 213,
         "company": "Air France L",
-        "logo_company": "",
+        "logo_company": "assets/images/companies-logo/img1.png",
         "vol_type": "A",
         "depart": {
             "type": "FIH",
@@ -33,7 +33,7 @@
     {
         "id": 325,
         "company": "Ethiopian Airlines",
-        "logo_company": "",
+        "logo_company": "assets/images/companies-logo/img3.png",
         "vol_type": "A/R",
         "depart": {
             "type": "FIH",
@@ -64,7 +64,7 @@
     {
         "id": 538,
         "company": "KLM Royal Dutch",
-        "logo_company": "",
+        "logo_company": "assets/images/companies-logo/img2.png",
         "vol_type": "A",
         "depart": {
             "type": "FIH",

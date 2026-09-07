@@ -1,0 +1,58 @@
+<section
+    class="flex flex-col relative"
+    >
+    <div
+        class="w-full h-screen pt-section-y px-main"
+        >
+        <span
+            class="flex flex-col items-center mx-auto pt-main"
+            >
+            <h2 
+                mgEntryAnim
+                [delay]="100"
+                [translateY]="25"
+                [threshold]="0.1"
+                class="text-hero text-center opacity-0">
+                Recherchez vos meilleurs destinations partout dans le monde.
+            </h2>
+        </span>
+        <div
+            mgEntryAnim
+            [delay]="200"
+            [translateY]="25"
+            class="mt-section-y opacity-0"
+            >
+            <mg-vol-form 
+                (volFormValues)="volSearched($event)"
+                [clearForm]="clearForm()"
+            />
+        </div>
+    </div>
+    <div
+        class="flex flex-col gap-sm px-main"
+        >
+            @if(loading()){
+                <p-progress-spinner/>
+            }@else if (searchEmpty().is) {
+                <div
+                    class="flex flex-col justify-center items-center gap-md py-section-y"
+                    >
+                    <span class="w-full flex justify-center items-center gap-md text-brand-text-muted">
+                        {{searchEmpty().message}} <i class="pi pi-search"></i>
+                    </span>
+                    <p-button 
+                        label="actualiser"
+                        severity="primary"
+                        (click)="actualizeList(); clearVolForm($event)"
+                        size="small"
+                    />
+                </div>
+            }@else {
+                <mg-list 
+                    [vols]="vols()"
+                    [isHeader]="false"
+                    label="list de vols"
+                />
+            }
+    </div>
+</section>

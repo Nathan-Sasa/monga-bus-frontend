@@ -44,7 +44,7 @@ export class StatCountComponent implements AfterViewInit, OnDestroy {
 	startCounters() {
 		this.animateValue(0, 170, 1500, (val) => this.billet = val)
 
-		setTimeout(() => this.animateValue(0, 35, 1500, (val) => this.destination = val), 200)
+		setTimeout(() => this.animateValue(0, 75, 1500, (val) => this.destination = val), 200)
 
 		setTimeout(() => this.animateValue(0, 5, 1500, (val) => this.companyPartner = val), 400)
 

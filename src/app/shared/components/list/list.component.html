@@ -14,9 +14,10 @@
             </tr>
         </ng-template>
     }
-    @for (vol of vols(); track vol.id;) {
+    <!-- @for (vol of vols(); track $index;) { -->
         <ng-template #body let-product>
             <tr
+                [aria-label]=" 'vol '+ product.depart.town +' - ' + product.destinations.town"
                 mgEntryAnim
                 [delay]="200"
                 [translateY]="-25"
@@ -26,7 +27,11 @@
                     style="min-width: 1rem"
                     class="{{textSize()}}"
                     >
-                    {{vol.logo_company}}
+                    <img 
+                        [ngSrc]="product.logo_company"
+                        [width]="logoSizeW()"
+                        [height]="logoSizeH()"
+                    >
                 </td>
                 <td 
                     style="min-width: 3rem"
@@ -36,7 +41,7 @@
                         class="flex flex-col"
                         >
                         <span>
-                            {{vol.company}}
+                            {{product.company}}
                         </span>
                         <!-- <span class="text-brand-text-muted">
                             {{vol.depart.type}} - {{vol.destinations.type}}
@@ -50,16 +55,16 @@
                     <div class="flex items-center gap-md">
                         <span class="flex flex-col gap-0">
                             <p>
-                                {{vol.depart.town}}
+                                {{product.depart.town}}
                             </p>
-                            <small class="text-brand-text-muted">{{vol.depart.type}}</small>
+                            <small class="text-brand-text-muted">{{product.depart.type}}</small>
                         </span>
                         <span class="text-brand-accent font-black mx-xs">>></span>
                         <span class="flex flex-col gap-0">
                             <p>
-                                {{vol.destinations.town}}
+                                {{product.destinations.town}}
                             </p>
-                            <small class="text-brand-text-muted">{{vol.destinations.type}}</small>
+                            <small class="text-brand-text-muted">{{product.destinations.type}}</small>
                         </span>
                     </div>
                 </td>
@@ -70,13 +75,13 @@
                     <span class="flex items-center gap-xs">
                         <p>Départ  </p> :
                         <p class="text-brand-text-muted">
-                            {{vol.depart.time | date: 'dd MMMM yyyy, HH:mm'}}
+                            {{product.depart.time | date: 'dd MMMM yyyy, HH:mm'}}
                         </p>
                     </span>
                     <span class="flex items-center gap-xs">
                         <p>Arrivé  </p> :
                         <p class="text-brand-text-muted">
-                            {{vol.destinations.time| date: 'dd MMMM yyyy, HH:mm'}}
+                            {{product.destinations.time| date: 'dd MMMM yyyy, HH:mm'}}
                         </p>
                     </span>
                 </td>
@@ -88,7 +93,7 @@
                         class="flex flex-col"
                         >
                         <p class="font-semibold">
-                            {{vol.prices.class.economic_class | currency: vol.prices.currency}}
+                            {{product.prices.class.economic_class | currency: product.prices.currency}}
                         </p>
                         <p class="text-brand-text-muted">économique</p>
                     </span>
@@ -105,5 +110,5 @@
                 </td>
             </tr>
         </ng-template>
-    }
+    <!-- } -->
 </p-table>

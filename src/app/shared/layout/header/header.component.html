@@ -39,7 +39,7 @@
                             [routerLinkActive]="['*:text-brand-accent!']"
                             [label]="url.label"
                             (onClick)="isNavOpen.update(v => !v)"
-                            size="small" 
+                            size="small"
                             [text]="btnText()"
                         />
                     </li> 
@@ -68,13 +68,13 @@
             class="block lg:hidden"
         />
     </div>
-    @if(isNavOpen()){
+    <!-- @if(isNavOpen()){
         <div
             class="container mx-auto min-h-44"
             >
     
         </div>
-    }
+    } -->
 </header>
 
 <p-drawer header="Monga Bus Travel" [(visible)]="isMenuOpen" position="right">

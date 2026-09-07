@@ -65,7 +65,7 @@ export class HeaderComponent {
             return
         }
 
-        if(currentScroll > this.lastScroll && currentScroll > 240){
+        if(currentScroll > this.lastScroll && currentScroll > 360){
             this.navBarVisible = false
         } else {
             this.navBarVisible = true

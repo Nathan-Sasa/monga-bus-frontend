@@ -1,0 +1,100 @@
+<p-card
+    class=""
+    >
+    <form 
+        [formGroup]="form" 
+        (ngSubmit)="submit()"
+        class="flex flex-col gap-lg">
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md"
+            >
+            <fieldset
+                [disabled]="submitting()"
+                class="flex flex-col gap-xs"
+                >
+                <label for="depart">Départ</label>
+                <p-iconfield>
+                    <p-inputicon class="pi pi-globe" />
+                    <input 
+                        pInputText 
+                        type="text" 
+                        id="depart" 
+                        formControlName="depart" 
+                        placeholder="ex. Kinshasa" 
+                        class="w-full" 
+                    />
+                </p-iconfield>
+                @if (form.get('depart')?.touched && form.get('depart')?.invalid) {
+                    <small class="invalid-feedbac text-[orangered]">Le depart est requis</small>
+                }
+            </fieldset>
+            <fieldset
+                [disabled]="submitting()"
+                class="flex flex-col gap-xs"
+                >
+                <label for="destination">Destination</label>
+                <p-iconfield>
+                    <p-inputicon class="pi pi-globe" />
+                    <input 
+                        pInputText 
+                        type="text" 
+                        id="destination" 
+                        formControlName="destination" 
+                        placeholder="ex. Paris" 
+                        class="w-full" 
+                    />
+                </p-iconfield>
+                @if (form.get('destination')?.touched && form.get('destination')?.invalid) {
+                    <small class="invalid-feedbac text-[orangered]">La destination est requise</small>
+                }
+            </fieldset>
+            <fieldset
+                [disabled]="submitting()"
+                class="flex flex-col gap-xs"
+                >
+                <label for="date">Date</label>
+                <p-iconfield>
+                    <p-inputicon class="pi pi-calendar" />
+                    <input 
+                        pInputText
+                        type="date" 
+                        id="date" 
+                        formControlName="date"
+                        class="w-full" 
+                    />
+                </p-iconfield>
+            </fieldset>
+            <fieldset
+                [disabled]="submitting()"
+                class="flex flex-col gap-xs"
+                >
+                <label for="passager">Passager</label>
+                <p-iconfield>
+                    <p-inputicon class="pi pi-user" />
+                    <p-select
+                        formControlName="passager"
+                        inputId="passager"
+                        class="w-full"
+                        optionValue="id"
+                        optionLabel="name"
+                        [options]="passages()"
+                        class="pl-6 w-full!"
+                        />
+                </p-iconfield>
+            </fieldset>
+        </div>
+        <div
+            class="flex items-center justify-center"
+            >
+            <p-button 
+                label="Recherchez"
+                [loading]="loading()"
+                type="submit"
+                [disabled]="form.invalid"
+                icon="pi pi-search"
+                iconPos="right"
+                size="small"
+            />
+        </div>
+    </form>
+</p-card>

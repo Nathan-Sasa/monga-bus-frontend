@@ -2,5 +2,6 @@
 @import "./styles/design-system/_reset.css";
 @import "./styles/design-system/_tokens.css";
 @import "./styles/design-system/animation.css";
+@import "./styles/components/input.css";
 @import "primeicons/primeicons.css";
 /* @import "tailwindcss"; */

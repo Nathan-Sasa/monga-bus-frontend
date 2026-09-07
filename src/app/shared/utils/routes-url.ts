@@ -5,7 +5,7 @@
 //     help: ''
 // }
 export const routesUrl = [
-    {path: `/`, label: 'Accueil', icon: 'pi pi-home', action: false},
+    {path: `/monga-bus`, label: 'Accueil', icon: 'pi pi-home', action: false},
     {path: `/vols`, label: 'Vols', icon: 'pi pi-globe', action: false},
     {path: '/companies', label: 'Companies', icon: 'pi pi-building', action: false},
     {path: '/about', label: 'A propos', icon: 'pi pi-verified', action: false},
