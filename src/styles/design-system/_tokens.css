@@ -100,6 +100,8 @@
     --z-sticky: 200;
     --z-overlay: 300;
     --z-modal: 400;
+
+    --nav-height: 64px;
 }
 
 @utility dark-theme {

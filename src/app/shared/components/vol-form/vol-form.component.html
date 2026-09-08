@@ -12,7 +12,7 @@
                 [disabled]="submitting()"
                 class="flex flex-col gap-xs"
                 >
-                <label for="depart">Départ</label>
+                <label for="depart" class="w-fit">Départ<span class="text-[orangered] ml-0.5 text-base">*</span></label>
                 <p-iconfield>
                     <p-inputicon class="pi pi-globe" />
                     <input 
@@ -32,7 +32,7 @@
                 [disabled]="submitting()"
                 class="flex flex-col gap-xs"
                 >
-                <label for="destination">Destination</label>
+                <label for="destination" class="w-fit">Destination<span class="text-[orangered] ml-0.5 text-base">*</span></label>
                 <p-iconfield>
                     <p-inputicon class="pi pi-globe" />
                     <input 
@@ -52,15 +52,15 @@
                 [disabled]="submitting()"
                 class="flex flex-col gap-xs"
                 >
-                <label for="date">Date</label>
+                <label for="date" class="w-fit">Date</label>
                 <p-iconfield>
                     <p-inputicon class="pi pi-calendar" />
-                    <input 
+                    <input
                         pInputText
-                        type="date" 
-                        id="date" 
+                        type="date"
+                        id="date"
                         formControlName="date"
-                        class="w-full" 
+                        class="w-full"
                     />
                 </p-iconfield>
             </fieldset>
@@ -68,7 +68,7 @@
                 [disabled]="submitting()"
                 class="flex flex-col gap-xs"
                 >
-                <label for="passager">Passager</label>
+                <label for="passager" class="w-fit">Passager</label>
                 <p-iconfield>
                     <p-inputicon class="pi pi-user" />
                     <p-select

@@ -24,26 +24,28 @@ const mgPreset = definePreset(Aura, {
 			600: '{amber.600}',
 			700: '{amber.700}',
 			800: '{amber.800}',
-			900: '{amber900}',
+			900: '{amber.900}',
 		}
 	},
 
 	components: {
-		progressspriner: {
+		progressspinner: {
 			colorScheme: {
 				light: {
 					root: {
 						colorOne: '{primary.500}',
 						colorTwo: '{primary.500}',
-						colorThree: '{primary.400}',
-						colorFour: '{primary.400}',
+						colorThree: '{primary.200}',
+						colorFour: '{primary.200}',
 					}
 				},
 				dark: {
-					colorOne: '{primary.500}',
-					colorTwo: '{primary.500}',
-					colorThree: '{primary.400}',
-					colorFour: '{primary.400}',
+					root: {
+						colorOne: '{primary.500}',
+						colorTwo: '{primary.500}',
+						colorThree: '{primary.200}',
+						colorFour: '{primary.200}',
+					}
 				}
 			}
 		}

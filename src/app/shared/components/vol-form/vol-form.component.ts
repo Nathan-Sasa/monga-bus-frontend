@@ -61,10 +61,10 @@ export class VolFormComponent {
 		this.submitting.set(true)
 
 		const formValueAsString: ISearchVolAsString = {
-			depart: this.form.get('depart')?.value as string,
-			destination: this.form.get('destination')?.value as string,
-			date: this.form.get('date')?.value as string,
-			passager: this.form.get('passager')?.value as string
+			depart: this.form.get('depart')?.value.trim() as string,
+			destination: this.form.get('destination')?.value.trim() as string,
+			date: this.form.get('date')?.value?.trim() as string,
+			passager: this.form.get('passager')?.value?.trim() as string
 		}
 
 		this.volFormValues.emit(formValueAsString)

@@ -2,7 +2,7 @@
     [ariaLabel]="label()"
     [value]="vols()"
     [paginator]="false"
-    [tableStyle]="{'min-width': '55rem'}"
+    [tableStyle]="{'min-width': '65rem'}"
     [rowHover]="true"
     >
     @if(isHeader()) {
@@ -21,6 +21,7 @@
                 mgEntryAnim
                 [delay]="200"
                 [translateY]="-25"
+                [threshold]="0.1"
                 class="opacity-0"
                 >
                 <td 
@@ -28,7 +29,7 @@
                     class="{{textSize()}}"
                     >
                     <img 
-                        [ngSrc]="product.logo_company"
+                        [src]="product.logo_company"
                         [width]="logoSizeW()"
                         [height]="logoSizeH()"
                     >
@@ -49,7 +50,7 @@
                     </div>
                 </td>
                 <td 
-                    style="min-width: 6rem"
+                    style="min-width: 12rem"
                     class="{{textSize()}}"
                     >
                     <div class="flex items-center gap-md">

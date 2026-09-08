@@ -1,6 +1,7 @@
 <header
     #header
     id="header"
+    role="banner"
     class="navbar || mb-4 fixed w-full top-0 z-200 bg-transparent shadow-none border border-transparent transition-ease duration-200 || flex flex-col"
     [class.-translate-y-2/1]="!navBarVisible"
     >
@@ -23,6 +24,7 @@
             }
         </div>
         <nav
+            aria-label="barre de navigation"
             class="hidden lg:block"
             >
             <ul
@@ -30,7 +32,7 @@
                 >
                 @for(url of routesUrl; track $index){
                     <li
-                        
+                        [ariaLabel]="url.label + ' ' + 'url'"
                         >
                         <p-button
                             [icon]="url.icon"
@@ -78,5 +80,50 @@
 </header>
 
 <p-drawer header="Monga Bus Travel" [(visible)]="isMenuOpen" position="right">
-
+    <div
+        class="h-full w-full flex flex-col justify-between"
+        >
+        <nav
+            aria-label="barre de navigation"
+            class="pt-section-y"
+            >
+            <ul
+                class="flex flex-col items-start gap-sm"
+                >
+                @for(url of routesUrl; track $index){
+                    <li
+                        [ariaLabel]="url.label + ' ' + 'url'"
+                        >
+                        <p-button
+                            [icon]="url.icon"
+                            severity="secondary"
+                            routerLink="{{url.path}}"
+                            [routerLinkActive]="['*:text-brand-accent!']"
+                            [label]="url.label"
+                            (onClick)="isNavOpen.update(v => !v); isMenuOpen = false"
+                            size="large"
+                        />
+                    </li> 
+                }
+            </ul>
+        </nav>
+        <div
+            class="w-full flex flex-col items-start gap-sm relative"
+            >
+            <span
+                class="flex items-center gap-md"
+                >
+                <p>Mode : </p>
+                <mg-theme />
+            </span>
+            <p-button
+                icon="pi pi-sign-in"
+                severity="primary"
+                routerLink="/auth"
+                label="Connexion"
+                size="large" 
+                class="w-full!"
+            />
+        </div>
+    </div>
 </p-drawer>

@@ -1,4 +1,4 @@
-import { Component, DestroyRef, EventEmitter, inject, OnInit, signal } from '@angular/core';
+import { Component, DestroyRef, ElementRef, EventEmitter, inject, OnInit, signal, ViewChild } from '@angular/core';
 import { VolMockService } from '../../../../core/services/vol-mock.service';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop'
 import { tap } from 'rxjs';
@@ -28,6 +28,8 @@ export class VolsPageComponent implements OnInit {
 	private readonly volMockService = inject(VolMockService)
 	private readonly destroyRef = inject(DestroyRef)
 	// protected vols = toSignal(this.volMockService.getVols().pipe(tap(() => this.loading.set(false))), {initialValue: []})
+
+	@ViewChild('volListSection', {read: ElementRef}) volListSection!: ElementRef
 
 	protected vols = signal<IVol[]>([])
 	protected loading = signal(true)
@@ -64,6 +66,7 @@ export class VolsPageComponent implements OnInit {
 
 		this.fetch.set(false)
 		this.loading.set(true)
+		this.scrollToList()
 
 		this.volMockService.searchBy(vol)
 			.pipe(takeUntilDestroyed(this.destroyRef))
@@ -91,7 +94,17 @@ export class VolsPageComponent implements OnInit {
 		// this.clearForm = click
 		// this.clearForm.set(click.type)
 		this.clearForm.set(true)
-		console.log('emit : ', this.clearForm())
+		// console.log('emit : ', this.clearForm())
 	}
 
+
+	scrollToList() {
+		if (!this.volListSection) return 
+
+		this.volListSection.nativeElement.scrollIntoView({
+			behavior: 'smooth',
+			block: 'start',
+			inline: 'nearest',
+		});
+	}
 }
