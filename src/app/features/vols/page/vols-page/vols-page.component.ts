@@ -34,7 +34,7 @@ export class VolsPageComponent implements OnInit {
 	protected vols = signal<IVol[]>([])
 	protected loading = signal(true)
 	protected searchEmpty = signal<{is: boolean, message: string}>({is: false, message: 'Aucun vol trouvé avec cette recherche'})
-	// protected clearForm = new EventEmitter<boolean>()
+	// protected clearForm = new EventEmitter<boolean>() 
 	protected clearForm = signal<boolean>(false)
 	// protected clearForm!: Event
 
