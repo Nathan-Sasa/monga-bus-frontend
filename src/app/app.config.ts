@@ -3,14 +3,14 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 import { withInMemoryScrolling } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async'
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import { routes } from './app.routes';
+
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
 import { definePreset } from '@primeuix/themes'
-import { registerLocaleData } from '@angular/common';
-import localeFr from '@angular/common/locales/fr';
-
-import { routes } from './app.routes';
-import { semantic } from '@primeuix/themes/aura/base';
+// import { semantic } from '@primeuix/themes/aura/base';
 
 const mgPreset = definePreset(Aura, {
 	semantic: {
