@@ -1,9 +1,9 @@
-import { Component, input, ViewChild } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { IVol } from '../../../core/models/vol-mock.model';
 import { EntryAnimDirective } from '../../directives/entry-anim.directive';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -13,8 +13,7 @@ import { RouterLink } from '@angular/router';
 		ButtonModule,
 		EntryAnimDirective,
 		CommonModule,
-		RouterLink,
-		NgOptimizedImage
+		RouterLink
 	],
 	templateUrl: './list.component.html',
 	styleUrl: './list.component.css',
