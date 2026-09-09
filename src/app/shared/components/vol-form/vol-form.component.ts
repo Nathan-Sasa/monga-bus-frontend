@@ -1,4 +1,4 @@
-import { Component, computed, EventEmitter, input, Output, signal } from '@angular/core';
+import { Component, computed, effect, EventEmitter, input, Output, signal } from '@angular/core';
 import { Card } from 'primeng/card'
 import { Select } from 'primeng/select'
 import { InputText } from 'primeng/inputtext'
@@ -25,16 +25,12 @@ import { ISearchVol, ISearchVolAsString } from '../../../features/vols/model/sea
 export class VolFormComponent {
 
 	@Output() volFormValues = new EventEmitter<ISearchVolAsString>()
-
+	// clearForm = input<EventEmitter<boolean>>()
+	// private setClearForm = signal<boolean | EventEmitter<boolean> | undefined>(this.clearForm())
 	clearForm = input<boolean>(false)
-	clearFormHandle = computed(() => {
-		console.log('event receive : ', this.clearForm())
-		if (this.clearForm()) {
-			this.form.reset()
-		}
-	})
+	private setClearForm = signal<boolean>(this.clearForm())
 
-	protected passages = signal([{id: 1, name: 'enfant'}, {id: 2, name: 'adulte'}])
+	protected passagers = signal([{id: 1, name: 'enfant'}, {id: 2, name: 'adulte'}])
 
 	protected loading = signal<boolean>(false)
 	protected submitting = signal<boolean>(false)
@@ -53,24 +49,31 @@ export class VolFormComponent {
 		passager: new FormControl('', {})
 	})
 
+	constructor() {
+		effect(() => {
+			console.log('event receive : ', this.clearForm())
+			console.log('set clear fom : ', this.setClearForm())
+		})
+	}
+
+
 	submit(): void {
 		this.form.markAllAsTouched()
 		if (this.form.invalid) return
 		
 		this.loading.set(true)
 		this.submitting.set(true)
-
+		
 		const formValueAsString: ISearchVolAsString = {
 			depart: this.form.get('depart')?.value.trim() as string,
 			destination: this.form.get('destination')?.value.trim() as string,
 			date: this.form.get('date')?.value?.trim() as string,
-			passager: this.form.get('passager')?.value?.trim() as string
+			passager: this.form.get('passager')?.value as string
 		}
 
 		this.volFormValues.emit(formValueAsString)
 
 		setTimeout(() => {
-			// this.form.reset()
 			this.loading.set(false)
 			this.submitting.set(false)
 		}, 500)

@@ -34,7 +34,7 @@ export class VolsPageComponent implements OnInit {
 	protected vols = signal<IVol[]>([])
 	protected loading = signal(true)
 	protected searchEmpty = signal<{is: boolean, message: string}>({is: false, message: 'Aucun vol trouvé avec cette recherche'})
-	// protected clearForm = new EventEmitter<Event>()
+	// protected clearForm = new EventEmitter<boolean>()
 	protected clearForm = signal<boolean>(false)
 	// protected clearForm!: Event
 
@@ -56,7 +56,7 @@ export class VolsPageComponent implements OnInit {
 					this.vols.set(vols)
 					this.loading.set(false)
 					this.fetch.set(false)
-					console.log('Vols initialize', this.vols())
+					// console.log('Vols initialize', this.vols())
 				}
 			})
 	}
@@ -74,7 +74,7 @@ export class VolsPageComponent implements OnInit {
 				next: (result) => {
 					this.vols.set(result)
 					this.loading.set(false)
-					console.log('Vols search' ,this.vols())
+					// console.log('Vols search' ,this.vols())
 
 					if(result.length <= 0) {
 						this.searchEmpty.set({is: true, message: this.searchEmpty().message})
@@ -86,10 +86,9 @@ export class VolsPageComponent implements OnInit {
 	actualizeList(){
 		this.searchEmpty.set({is: false, message: this.searchEmpty().message})
 		this.loadVols(true)
-
 	}
 	
-	clearVolForm(click: Event) {
+	clearVolForm() {
 		// this.clearForm.emit(click)
 		// this.clearForm = click
 		// this.clearForm.set(click.type)
