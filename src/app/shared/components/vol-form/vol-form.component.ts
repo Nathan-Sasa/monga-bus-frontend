@@ -78,10 +78,4 @@ export class VolFormComponent {
 			this.submitting.set(false)
 		}, 500)
 	}
-
-	// clearFormHandle(click: Event){
-	// 	if (click) {
-	// 		this.form.reset()
-	// 	}
-	// }
 }
